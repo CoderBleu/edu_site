@@ -5,10 +5,15 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+/**
+ * @author Blue
+ * NoArgsConstructor   生成无参数构造
+ * AllArgsConstructor  生成有参数构造方法
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@AllArgsConstructor  //生成有参数构造方法
-@NoArgsConstructor   //生成无参数构造
+@AllArgsConstructor
+@NoArgsConstructor
 public class GuliException extends RuntimeException {
     /**
      * 状态码

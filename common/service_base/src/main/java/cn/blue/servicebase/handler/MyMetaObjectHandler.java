@@ -6,6 +6,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+/**
+ * @author Blue
+ * mybatis-plus:更新、新增操作
+ */
 @Component
 public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override

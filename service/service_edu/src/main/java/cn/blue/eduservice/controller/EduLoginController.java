@@ -5,10 +5,11 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Blue
+ * CrossOrigin  解决跨域
  */
 @RestController
-@RequestMapping("/eduservice/user")
-@CrossOrigin  //解决跨域
+@RequestMapping("/eduService/user")
+@CrossOrigin
 public class EduLoginController {
 
     /**
