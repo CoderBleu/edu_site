@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.blue.eduservice.mapper.EduSubjectMapper">
+    <resultMap id="eduSubjectMapper" type="cn.blue.eduservice.entity.EduSubject">
+        <id column="ID" property="id"/>
+        <result column="TITLE" property="title"/>
+        <result column="SORT" property="sort"/>
+        <result column="PARENTID" property="parentId"/>
+        <result column="GMTCREATE" property="gmtCreate"/>
+        <result column="GMTMODIFIED" property="gmtModified"/>
+        <result column="STATUS" property="status"/>
+        <collection property="children" column="ID" select="getSecondSubject" ofType="cn.blue.eduservice.entity.EduSubject"
+                    />
+    </resultMap>
 
+    <sql id="Base_Column">ID,TITLE,SORT,PARENTID,GMTCREATE,GMTMODIFIED,STATUS</sql>
+
+    <sql id="Base_Where">
+        <if test="id != null and id != ''">
+           AND ID = #{id}
+        </if>
+        <if test="title != null and title != ''">
+           AND TITLE = #{title}
+        </if>
+        <if test="parentid != null and parentid != ''">
+           AND PARENTID = #{parentid}
+        </if>
+    </sql>
+
+    <select id="getAllSubject" parameterType="cn.blue.eduservice.entity.EduSubject" resultMap="eduSubjectMapper">
+        SELECT <include refid="Base_Column"/>
+        FROM EDU_SUBJECT
+        <include refid="Base_Where"/>
+    </select>
+
+    <select id="getSecondSubject" resultMap="eduSubjectMapper">
+        SELECT <include refid="Base_Column"/>
+        FROM EDU_SUBJECT
+        where parentid = #{ID}
+    </select>
 </mapper>

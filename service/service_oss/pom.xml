@@ -42,13 +42,6 @@
             <version>3.7.0</version>
         </dependency>
 
-
-        <!-- 日期工具栏依赖 -->
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.10.5</version>
-        </dependency>
     </dependencies>
 
     <build>
