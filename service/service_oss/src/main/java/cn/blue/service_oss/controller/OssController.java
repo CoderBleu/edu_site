@@ -2,6 +2,7 @@ package cn.blue.service_oss.controller;
 
 import cn.blue.commonutils.Result;
 import cn.blue.service_oss.service.OssService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,7 @@ public class OssController {
      * @param file 头像
      */
     @PostMapping
+    @ApiOperation(value = "上传Excel文件")
     public Result uploadOssFile(MultipartFile file) {
         //获取上传文件  MultipartFile
         //返回上传到oss的路径

@@ -9,6 +9,7 @@ import cn.blue.eduservice.entity.vo.TeacherQuery;
 import cn.blue.eduservice.service.EduSubjectService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,6 +38,7 @@ public class EduSubjectController {
      * @param file 上传过来的excel文件
      */
     @PostMapping("addSubject")
+    @ApiOperation("读取上传过来的文件，添加课程分类")
     public Result addSubject(MultipartFile file) {
         if(eduSubjectService.saveSubject(file, eduSubjectService)) {
             return Result.success();
@@ -48,6 +50,7 @@ public class EduSubjectController {
     /**
      * 读取表格数据，下载成excel表格
      */
+    @ApiOperation("读取表格数据，下载成excel表格")
     @GetMapping("uploadSubject")
     public Result uploadSubject() {
         if(eduSubjectService.uploadSubject()) {
@@ -62,6 +65,7 @@ public class EduSubjectController {
      * @return 课程分类树型列表
      */
     @GetMapping("getSubjectTree")
+    @ApiOperation(value = "获取课程分类树型列表")
     public Result getSubjectTree() {
         List<OneSubject> list  = eduSubjectService.getSubjectTree();
         return Result.success().data("list", list);
@@ -74,6 +78,7 @@ public class EduSubjectController {
      * TODO 需要根据条件来查一二级分类，如果还需要分页应该需要引入pageHelper
      */
     @GetMapping("getSubjectListCondition")
+    @ApiOperation(value = "TODO-获取课程分类列表(根据条件查询)")
     public Result getSubjectListCondition(@RequestBody(required = false) SubjectQuery subjectQuery) {
         Page<EduSubject> pageSubject = new Page<>();
         QueryWrapper<Object> wrapper = new QueryWrapper<>();
@@ -100,6 +105,7 @@ public class EduSubjectController {
      * @return 课程分类列表
      * TODO 增加children字段后select报错，然后使用mybatis的resultmap找不到方法，就算放在resource下。
      */
+    @ApiOperation(value = "获取课程分类列表(根据条件查询)")
     @PostMapping("getAllSubject")
     public Result getAllSubject(EduSubject eduSubject) {
         List<EduSubject> list  = eduSubjectService.getAllSubject(eduSubject);
