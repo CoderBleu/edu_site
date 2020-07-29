@@ -1,4 +1,4 @@
-package cn.blue.demo;
+package cn.blue.servicevod.demo;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;

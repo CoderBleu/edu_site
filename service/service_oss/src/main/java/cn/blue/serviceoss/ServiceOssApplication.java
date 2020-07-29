@@ -1,12 +1,15 @@
-package cn.blue.service_oss;
+package cn.blue.serviceoss;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan("cn.blue")
-// 不加载数据库配置
+/**
+ * @author Blue
+ * 不加载数据库配置
+ */
+@ComponentScan(basePackages = {"cn.blue"})
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class ServiceOssApplication {
 

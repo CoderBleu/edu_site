@@ -1,7 +1,7 @@
-package cn.blue.service_oss.service.impl;
+package cn.blue.serviceoss.service.impl;
 
-import cn.blue.service_oss.service.OssService;
-import cn.blue.service_oss.utils.ConstantPropertiesUtils;
+import cn.blue.serviceoss.utils.ConstantPropertiesUtils;
+import cn.blue.serviceoss.service.OssService;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import org.joda.time.DateTime;

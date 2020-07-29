@@ -1,7 +1,7 @@
-package cn.blue.service_oss.controller;
+package cn.blue.serviceoss.controller;
 
 import cn.blue.commonutils.Result;
-import cn.blue.service_oss.service.OssService;
+import cn.blue.serviceoss.service.OssService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ * @author Blue
+ */
 @RestController
-@RequestMapping("/eduoss/fileoss")
+@RequestMapping("/eduOss/fileOss")
 @CrossOrigin
 public class OssController {
 

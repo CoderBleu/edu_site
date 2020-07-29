@@ -1,16 +1,15 @@
 package cn.blue.eduservice.service.impl;
 
 import cn.blue.eduservice.entity.EduSubject;
-import cn.blue.eduservice.entity.excel.SubjectData;
 import cn.blue.eduservice.entity.subject.OneSubject;
 import cn.blue.eduservice.entity.subject.TwoSubject;
+import cn.blue.eduservice.entity.excel.SubjectData;
 import cn.blue.eduservice.listener.SubjectExcelListener;
 import cn.blue.eduservice.mapper.EduSubjectMapper;
 import cn.blue.eduservice.service.EduSubjectService;
 import com.alibaba.excel.EasyExcel;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import net.sf.jsqlparser.expression.DateTimeLiteralExpression;
 import org.joda.time.DateTime;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -104,7 +103,7 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
     }
 
     @Override
-    public List<EduSubject> getAllSubject(EduSubject eduSubject) {
+    public List<OneSubject> getAllSubject(EduSubject eduSubject) {
         return eduSubjectMapper.getAllSubject(eduSubject);
     }
 
@@ -129,8 +128,4 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
         }
     }
 
-    @Override
-    public List<OneSubject> getSubjectListCondition() {
-        return null;
-    }
 }

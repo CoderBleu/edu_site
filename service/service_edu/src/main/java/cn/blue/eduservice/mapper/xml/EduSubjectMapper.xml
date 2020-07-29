@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.blue.eduservice.mapper.EduSubjectMapper">
-    <resultMap id="eduSubjectMapper" type="cn.blue.eduservice.entity.EduSubject">
+    <resultMap id="eduSubjectMapper" type="cn.blue.eduservice.entity.subject.OneSubject">
         <id column="ID" property="id"/>
         <result column="TITLE" property="title"/>
         <result column="SORT" property="sort"/>
-        <result column="PARENTID" property="parentId"/>
-        <result column="GMTCREATE" property="gmtCreate"/>
-        <result column="GMTMODIFIED" property="gmtModified"/>
+        <result column="GMT_CREATE" property="gmtCreate"/>
+        <result column="GMT_MODIFIED" property="gmtModified"/>
         <result column="STATUS" property="status"/>
-        <collection property="children" column="ID" select="getSecondSubject" ofType="cn.blue.eduservice.entity.EduSubject"
-                    />
+        <collection property="children" column="ID" select="getSecondSubject"
+                    ofType="cn.blue.eduservice.entity.subject.TwoSubject"
+        />
     </resultMap>
 
-    <sql id="Base_Column">ID,TITLE,SORT,PARENTID,GMTCREATE,GMTMODIFIED,STATUS</sql>
+    <sql id="Base_Column">ID,TITLE,SORT,GMT_CREATE,GMT_MODIFIED,STATUS</sql>
 
     <sql id="Base_Where">
-        <if test="id != null and id != ''">
-           AND ID = #{id}
+        <if test="eduSubject.gmtCreate != null">
+            AND GMT_CREATE > #{eduSubject.gmtCreate}
         </if>
-        <if test="title != null and title != ''">
-           AND TITLE = #{title}
+        <if test="eduSubject.gmtModified != null">
+            AND GMT_CREATE &lt; #{eduSubject.gmtModified}
         </if>
-        <if test="parentid != null and parentid != ''">
-           AND PARENTID = #{parentid}
+        <if test="eduSubject.title != null and eduSubject.title != ''">
+            AND TITLE = #{eduSubject.title}
         </if>
     </sql>
 
     <select id="getAllSubject" parameterType="cn.blue.eduservice.entity.EduSubject" resultMap="eduSubjectMapper">
-        SELECT <include refid="Base_Column"/>
+        SELECT
+        <include refid="Base_Column"/>
         FROM EDU_SUBJECT
+        WHERE PARENT_ID = 0
         <include refid="Base_Where"/>
     </select>
 
-    <select id="getSecondSubject" resultMap="eduSubjectMapper">
-        SELECT <include refid="Base_Column"/>
+    <select id="getSecondSubject" resultType="cn.blue.eduservice.entity.subject.TwoSubject">
+        SELECT
+        <include refid="Base_Column"/>
         FROM EDU_SUBJECT
-        where parentid = #{ID}
+        where PARENT_ID = #{id}
     </select>
 </mapper>

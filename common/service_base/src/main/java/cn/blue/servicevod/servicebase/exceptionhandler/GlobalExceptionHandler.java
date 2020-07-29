@@ -1,4 +1,4 @@
-package cn.blue.servicebase.exceptionhandler;
+package cn.blue.servicevod.servicebase.exceptionhandler;
 
 import cn.blue.commonutils.Result;
 import lombok.extern.slf4j.Slf4j;

@@ -25,6 +25,9 @@ public class CourseInfoVo {
     @ApiModelProperty(value = "课程标题")
     private String title;
 
+    @ApiModelProperty(value = "教师名")
+    private String teacherName;
+
     /**
      * 0.01
      */

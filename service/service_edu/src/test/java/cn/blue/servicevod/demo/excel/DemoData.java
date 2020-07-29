@@ -1,4 +1,4 @@
-package cn.blue.demo.excel;
+package cn.blue.servicevod.demo.excel;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;

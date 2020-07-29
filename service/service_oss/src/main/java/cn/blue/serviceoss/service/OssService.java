@@ -1,4 +1,4 @@
-package cn.blue.service_oss.service;
+package cn.blue.serviceoss.service;
 
 import org.springframework.web.multipart.MultipartFile;
 

@@ -1,8 +1,8 @@
 package cn.blue.eduservice.service.impl;
 
+import cn.blue.eduservice.service.EduTeacherService;
 import cn.blue.eduservice.entity.EduTeacher;
 import cn.blue.eduservice.mapper.EduTeacherMapper;
-import cn.blue.eduservice.service.EduTeacherService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

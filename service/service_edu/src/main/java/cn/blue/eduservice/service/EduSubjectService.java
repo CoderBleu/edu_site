@@ -36,17 +36,13 @@ public interface EduSubjectService extends IService<EduSubject> {
      * @param eduSubject 查询条件
      * @return 返回分类数据
      */
-    List<EduSubject> getAllSubject(EduSubject eduSubject);
+    List<OneSubject> getAllSubject(EduSubject eduSubject);
 
-    /**
-     * 根据条件获取课程分类列表
-     * @return 返回分类数据
-     */
-    List<OneSubject> getSubjectListCondition();
 
     /**
      * 下载excel
      * @return 是否成功
      */
     boolean uploadSubject();
+
 }

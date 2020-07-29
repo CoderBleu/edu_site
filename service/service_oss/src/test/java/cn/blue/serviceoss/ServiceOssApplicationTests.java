@@ -1,4 +1,4 @@
-package cn.blue.service_oss;
+package cn.blue.serviceoss;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

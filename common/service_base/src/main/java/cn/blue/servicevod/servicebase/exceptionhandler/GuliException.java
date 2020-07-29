@@ -1,4 +1,4 @@
-package cn.blue.servicebase.exceptionhandler;
+package cn.blue.servicevod.servicebase.exceptionhandler;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
