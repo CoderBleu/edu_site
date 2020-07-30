@@ -19,7 +19,8 @@ public interface EduSubjectService extends IService<EduSubject> {
 
     /**
      * 添加课程分类
-     * @param file excel文件
+     *
+     * @param file              excel文件
      * @param eduSubjectService 为了查数据库
      * @return 添加课程分类
      */
@@ -27,12 +28,14 @@ public interface EduSubjectService extends IService<EduSubject> {
 
     /**
      * 获取课程分类树形结构
+     *
      * @return 返回分类数据
      */
     List<OneSubject> getSubjectTree();
 
     /**
      * 获取课程分类列表
+     *
      * @param eduSubject 查询条件
      * @return 返回分类数据
      */
@@ -41,6 +44,7 @@ public interface EduSubjectService extends IService<EduSubject> {
 
     /**
      * 下载excel
+     *
      * @return 是否成功
      */
     boolean uploadSubject();

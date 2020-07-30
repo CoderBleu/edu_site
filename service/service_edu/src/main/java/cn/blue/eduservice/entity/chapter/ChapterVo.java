@@ -18,7 +18,7 @@ public class ChapterVo {
     private Integer sort;
 
     /**
-     *  表示小节
+     * 表示小节
      */
     private List<VideoVo> children;
 }

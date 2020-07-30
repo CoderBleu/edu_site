@@ -2,10 +2,12 @@ package cn.blue.eduservice.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
+
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -26,7 +28,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="EduSubject对象", description="课程科目")
+@ApiModel(value = "EduSubject对象", description = "课程科目")
 public class EduSubject implements Serializable {
 
     private static final long serialVersionUID = 1L;

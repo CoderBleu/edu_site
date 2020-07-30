@@ -17,6 +17,7 @@ import java.util.List;
 public interface EduChapterService extends IService<EduChapter> {
     /**
      * 课程大纲列表,根据课程id进行查询
+     *
      * @param courseId 课程id
      * @return 课程大纲列表
      */
@@ -24,6 +25,7 @@ public interface EduChapterService extends IService<EduChapter> {
 
     /**
      * 删除章节的方法
+     *
      * @param chapterId 章节的id
      * @return 是否成功
      */
@@ -31,6 +33,7 @@ public interface EduChapterService extends IService<EduChapter> {
 
     /**
      * 检查此章节的序号是否唯一
+     *
      * @param eduChapter 序号
      * @return 是否唯一
      */

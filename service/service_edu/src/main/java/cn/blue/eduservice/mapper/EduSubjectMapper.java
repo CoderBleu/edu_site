@@ -21,6 +21,7 @@ public interface EduSubjectMapper extends BaseMapper<EduSubject> {
 
     /**
      * 获取课程分类列表
+     *
      * @param eduSubject 查询条件
      * @return 返回分类数据
      * 这边好像是resultMap封装的是OneSubject的对象，然后我传的是eduSubject对象，直接获取不到值

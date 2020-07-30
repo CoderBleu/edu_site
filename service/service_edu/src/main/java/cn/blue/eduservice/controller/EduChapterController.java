@@ -58,7 +58,7 @@ public class EduChapterController {
 
     @ApiOperation("修改章节")
     @PutMapping("updateChapter/{id}")
-    public Result updateChapter(@PathVariable String id,@RequestBody EduChapter eduChapter) {
+    public Result updateChapter(@PathVariable String id, @RequestBody EduChapter eduChapter) {
         if (chapterService.updateById(eduChapter)) {
             return Result.success();
         } else {

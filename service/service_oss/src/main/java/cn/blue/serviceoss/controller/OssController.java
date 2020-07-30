@@ -23,6 +23,7 @@ public class OssController {
 
     /**
      * 上传头像的方法
+     *
      * @param file 头像
      */
     @PostMapping
@@ -31,6 +32,6 @@ public class OssController {
         //获取上传文件  MultipartFile
         //返回上传到oss的路径
         String url = ossService.uploadFileAvatar(file);
-        return Result.success().data("url",url);
+        return Result.success().data("url", url);
     }
 }

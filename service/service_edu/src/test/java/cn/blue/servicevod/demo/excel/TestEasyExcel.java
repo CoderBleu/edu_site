@@ -18,7 +18,7 @@ public class TestEasyExcel {
 
         //实现excel读操作
         String filename = "F:\\write.xlsx";
-        EasyExcel.read(filename,DemoData.class,new ExcelListener()).sheet().doRead();
+        EasyExcel.read(filename, DemoData.class, new ExcelListener()).sheet().doRead();
     }
 
     //创建方法返回list集合
@@ -27,7 +27,7 @@ public class TestEasyExcel {
         for (int i = 0; i < 10; i++) {
             DemoData data = new DemoData();
             data.setSno(i);
-            data.setSname("lucy"+i);
+            data.setSname("lucy" + i);
             list.add(data);
         }
         return list;

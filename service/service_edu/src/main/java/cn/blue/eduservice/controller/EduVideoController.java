@@ -50,10 +50,10 @@ public class EduVideoController {
     public Result deleteVideo(@PathVariable String id) {
         EduVideo video = videoService.getById(id);
         String videoSourceId = video.getVideoSourceId();
-        if(!StringUtils.isEmpty(videoSourceId)) {
+        if (!StringUtils.isEmpty(videoSourceId)) {
             Result result = vodClient.removeAlyVideo(videoSourceId);
             if (result.getCode() == 500) {
-                throw new GuliException(500,"熔断器执行...");
+                throw new GuliException(500, "熔断器执行...");
             }
         }
         if (videoService.removeById(id)) {
@@ -65,7 +65,7 @@ public class EduVideoController {
 
     @ApiOperation("根据id查询小节信息")
     @GetMapping("findVideoInfoById/{id}")
-    public Result findVideoInfoById(@PathVariable  String id) {
+    public Result findVideoInfoById(@PathVariable String id) {
         EduVideo video = videoService.getById(id);
         if (!StringUtils.isEmpty(video)) {
             return Result.success().data("video", video);
@@ -76,7 +76,7 @@ public class EduVideoController {
 
     @ApiOperation("修改小节")
     @PutMapping("updateVideo/{id}")
-    public Result updateVideo(@PathVariable  String id,@RequestBody EduVideo eduVideo) {
+    public Result updateVideo(@PathVariable String id, @RequestBody EduVideo eduVideo) {
         if (videoService.updateById(eduVideo)) {
             return Result.success().message("修改成功");
         } else {

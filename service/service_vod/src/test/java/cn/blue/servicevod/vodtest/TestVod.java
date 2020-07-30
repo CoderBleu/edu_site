@@ -40,7 +40,7 @@ public class TestVod {
     }
 
     //1 根据视频iD获取视频播放凭证
-    public static void getPlayAuth() throws Exception{
+    public static void getPlayAuth() throws Exception {
 
         DefaultAcsClient client = InitObject.initVodClient("LTAI4G6zY1jVgySipiL7hy3v", "wPyNSs1M3qiF2zn31di9Rrl3MtGIfN");
 
@@ -50,10 +50,11 @@ public class TestVod {
         request.setVideoId("474be24d43ad4f76af344b9f4daaabd1");
 
         response = client.getAcsResponse(request);
-        System.out.println("playAuth:"+response.getPlayAuth());
+        System.out.println("playAuth:" + response.getPlayAuth());
     }
+
     //1 根据视频iD获取视频播放地址
-    public static void getPlayUrl() throws Exception{
+    public static void getPlayUrl() throws Exception {
         //创建初始化对象
         DefaultAcsClient client = InitObject.initVodClient("LTAI4G6zY1jVgySipiL7hy3v", "wPyNSs1M3qiF2zn31di9Rrl3MtGIfN");
 

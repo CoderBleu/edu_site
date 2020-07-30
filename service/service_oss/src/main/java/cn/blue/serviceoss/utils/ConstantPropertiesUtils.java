@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class ConstantPropertiesUtils implements InitializingBean {
 
     /**
-     *     读取配置文件内容
+     * 读取配置文件内容
      */
     @Value("${aliyun.oss.file.endpoint}")
     private String endpoint;

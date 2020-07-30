@@ -91,15 +91,15 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
     public boolean removeCourse(String courseId) {
         //1 根据课程id删除小节
         QueryWrapper<EduVideo> videoWrapper = new QueryWrapper<>();
-        videoWrapper.eq("course_id",courseId);
+        videoWrapper.eq("course_id", courseId);
         videoMapper.delete(videoWrapper);
         //2 根据课程id删除章节
         QueryWrapper<EduChapter> chapterWrapper = new QueryWrapper<>();
-        chapterWrapper.eq("course_id",courseId);
+        chapterWrapper.eq("course_id", courseId);
         chapterMapper.delete(chapterWrapper);
         //3 根据课程id删除描述
         QueryWrapper<EduCourseDescription> descWrapper = new QueryWrapper<>();
-        descWrapper.eq("id",courseId);
+        descWrapper.eq("id", courseId);
         eduCourseDescriptionMapper.delete(descWrapper);
         //4 根据课程id删除课程本身
         int result = baseMapper.deleteById(courseId);

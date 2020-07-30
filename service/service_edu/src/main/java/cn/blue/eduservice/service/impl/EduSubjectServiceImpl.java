@@ -98,7 +98,7 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
             oneSubject.setChildren(twoFinalSubjectList);
         }
         // 根据排序升序排
-        finalSubjectList.sort((a,b) -> a.getSort().compareTo(b.getSort()));
+        finalSubjectList.sort((a, b) -> a.getSort().compareTo(b.getSort()));
         return finalSubjectList;
     }
 
@@ -112,7 +112,7 @@ public class EduSubjectServiceImpl extends ServiceImpl<EduSubjectMapper, EduSubj
         String date = new DateTime().toString("yyyy/MM/dd").replace("/", "");
         String path = "D://Temp//";
         File file = new File(path);
-        if(!file.exists()){
+        if (!file.exists()) {
             file.mkdirs();
         } /*else {
             file.delete();
