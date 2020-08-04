@@ -7,7 +7,7 @@ import cn.blue.eduservice.service.EduVideoService;
 import cn.blue.eduservice.entity.EduChapter;
 import cn.blue.eduservice.entity.EduVideo;
 import cn.blue.eduservice.entity.chapter.ChapterVo;
-import cn.blue.servicevod.servicebase.exceptionhandler.GuliException;
+import cn.blue.servicebase.exceptionhandler.GuliException;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;

@@ -26,7 +26,7 @@ public interface VodClient {
      * @param id 视频id
      */
     @DeleteMapping("/eduVod/video/removeAlyVideo/{id}")
-    public Result removeAlyVideo(@PathVariable String id);
+    public Result removeAlyVideo(@PathVariable("id") String id);
 
     /**
      * 定义调用删除多个视频的方法

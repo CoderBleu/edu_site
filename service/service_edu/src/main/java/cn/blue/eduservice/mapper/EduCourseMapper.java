@@ -1,6 +1,7 @@
 package cn.blue.eduservice.mapper;
 
 import cn.blue.eduservice.entity.EduCourse;
+import cn.blue.eduservice.entity.frontvo.CourseWebVo;
 import cn.blue.eduservice.entity.vo.CourseInfoVo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -20,4 +21,11 @@ public interface EduCourseMapper extends BaseMapper<EduCourse> {
      * @return 课程信息
      */
     CourseInfoVo getPublishCourseInfo(String courseId);
+
+    /**
+     * 查询课程基本信息
+     * @param courseId 课程id
+     * @return 课程基本信息
+     */
+    CourseWebVo getBaseCourseInfo(String courseId);
 }

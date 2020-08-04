@@ -1,7 +1,6 @@
 package cn.blue.servicevod.service.impl;
 
 import cn.blue.servicevod.service.VodService;
-import cn.blue.servicevod.servicebase.exceptionhandler.GuliException;
 import cn.blue.servicevod.utils.ConstantVodUtils;
 import cn.blue.servicevod.utils.InitVodClient;
 import com.aliyun.vod.upload.impl.UploadVideoImpl;

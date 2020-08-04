@@ -1,8 +1,13 @@
 package cn.blue.eduservice.service;
 
 import cn.blue.eduservice.entity.EduCourse;
+import cn.blue.eduservice.entity.frontvo.CourseFrontVo;
+import cn.blue.eduservice.entity.frontvo.CourseWebVo;
 import cn.blue.eduservice.entity.vo.CourseInfoVo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -45,4 +50,13 @@ public interface EduCourseService extends IService<EduCourse> {
      * @return 是否成功
      */
     boolean removeCourse(String courseId);
+
+    /**
+     * 得到课程的基本信息
+     * @param courseId 课程ID
+     * @return 课程的基本信息
+     */
+    CourseWebVo getBaseCourseInfo(String courseId);
+
+    Map<String, Object> getCourseFrontList(Page<EduCourse> pageCourse, CourseFrontVo courseFrontVo);
 }

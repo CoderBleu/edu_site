@@ -5,9 +5,8 @@ import cn.blue.commonutils.Result;
 import cn.blue.eduservice.client.VodClient;
 import cn.blue.eduservice.service.EduVideoService;
 import cn.blue.eduservice.entity.EduVideo;
-import cn.blue.servicevod.servicebase.exceptionhandler.GuliException;
+import cn.blue.servicebase.exceptionhandler.GuliException;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 

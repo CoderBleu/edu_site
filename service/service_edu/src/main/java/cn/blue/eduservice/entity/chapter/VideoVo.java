@@ -14,4 +14,6 @@ public class VideoVo {
     private String title;
 
     private Integer sort;
+
+    private String videoSourceId;
 }

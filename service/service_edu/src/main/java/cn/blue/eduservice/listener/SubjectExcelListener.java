@@ -3,7 +3,7 @@ package cn.blue.eduservice.listener;
 import cn.blue.eduservice.entity.EduSubject;
 import cn.blue.eduservice.entity.excel.SubjectData;
 import cn.blue.eduservice.service.EduSubjectService;
-import cn.blue.servicevod.servicebase.exceptionhandler.GuliException;
+import cn.blue.servicebase.exceptionhandler.GuliException;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

@@ -17,6 +17,9 @@
         <module>service_oss</module>
         <module>edu_cms</module>
         <module>edu_acl</module>
+        <module>service_msm</module>
+        <module>service_ucenter</module>
+        <module>service_order</module>
     </modules>
     <dependencies>
 
@@ -51,6 +54,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
         </dependency>
 
         <dependency>
