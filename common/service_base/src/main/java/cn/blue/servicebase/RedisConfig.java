@@ -26,22 +26,19 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
-        StringRedisSerializer redisSerializer = new StringRedisSerializer();
+        RedisSerializer<String> redisSerializer = new StringRedisSerializer();
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
         ObjectMapper om = new ObjectMapper();
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         jackson2JsonRedisSerializer.setObjectMapper(om);
         template.setConnectionFactory(factory);
-        // 取值多双引号问题: value序列化用的是jackson2JsonRedisSerializer，改成StringRedisSerializer就行。
         //key序列化方式
         template.setKeySerializer(redisSerializer);
         //value序列化
-        template.setValueSerializer(redisSerializer);
+        template.setValueSerializer(jackson2JsonRedisSerializer);
         //value hashmap序列化
-        template.setHashValueSerializer(redisSerializer);
-        template.setHashValueSerializer(redisSerializer);
-        template.afterPropertiesSet();
+        template.setHashValueSerializer(jackson2JsonRedisSerializer);
         return template;
     }
 

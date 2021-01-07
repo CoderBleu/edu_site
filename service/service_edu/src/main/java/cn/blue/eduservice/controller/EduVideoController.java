@@ -22,7 +22,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/eduService/eduVideo")
-@CrossOrigin
+// @CrossOrigin
 public class EduVideoController {
     @Resource
     private EduVideoService videoService;

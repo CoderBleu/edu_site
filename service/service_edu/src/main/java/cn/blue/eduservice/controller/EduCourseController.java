@@ -24,7 +24,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduService/eduCourse")
-@CrossOrigin
+// @CrossOrigin
 public class EduCourseController {
 
     @Resource
